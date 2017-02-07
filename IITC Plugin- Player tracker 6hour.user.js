@@ -435,7 +435,7 @@ function wrapper(plugin_info) {
 
             var opts = {
                 weight: 2-0.25*i,
-                color: PLAYER_TRACKER_LINE_COLOUR_ENL,
+                color: PLAYER_TRACKER_6H_LINE_COLOUR_ENL,
                 clickable: false,
                 opacity: 1-0.2*i,
                 //dashArray: "5,8"
@@ -450,7 +450,7 @@ function wrapper(plugin_info) {
 
             var opts = {
                 weight: 2-0.25*i,
-                color: PLAYER_TRACKER_LINE_COLOUR_RES,
+                color: PLAYER_TRACKER_6H_LINE_COLOUR_RES,
                 clickable: false,
                 opacity: 1-0.2*i,
                 //dashArray: "5,8"
