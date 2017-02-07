@@ -120,11 +120,11 @@ function wrapper(plugin_info) {
             plugin.playerTracker6h.drawnTracesRes.clearLayers();
             ctrl.addClass('disabled').attr('title', 'Zoom in to show those.');
             //note: zoomListener is also called at init time to set up things, so we only need to do this in here
-            window.chat.backgroundChannelData('plugin.playerTracker', 'all', false);   //disable this plugin's interest in 'all' COMM
+            window.chat.backgroundChannelData('plugin.playerTracker6h', 'all', false);   //disable this plugin's interest in 'all' COMM
         } else {
             ctrl.removeClass('disabled').attr('title', '');
             //note: zoomListener is also called at init time to set up things, so we only need to do this in here
-            window.chat.backgroundChannelData('plugin.playerTracker', 'all', true);    //enable this plugin's interest in 'all' COMM
+            window.chat.backgroundChannelData('plugin.playerTracker6h', 'all', true);    //enable this plugin's interest in 'all' COMM
         }
     };
 
@@ -360,7 +360,7 @@ function wrapper(plugin_info) {
                 .append('<br>')
                 .append(document.createTextNode(ago(last.time, now)))
                 .append('<br>')
-                .append(plugin.playerTracker.getPortalLink(last));
+                .append(plugin.playerTracker6h.getPortalLink(last));
 
             // show previous data in popup
             if(evtsLength >= 2) {
@@ -536,7 +536,7 @@ function wrapper(plugin_info) {
 
     window.plugin.playerTracker6h.onNicknameClicked = function(info) {
         if (info.event.ctrlKey || info.event.metaKey) {
-            return !plugin.playerTracker.centerMapOnUser(info.nickname);
+            return !plugin.playerTracker6h.centerMapOnUser(info.nickname);
         }
         return true; // don't interrupt hook
     };
