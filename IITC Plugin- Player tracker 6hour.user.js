@@ -114,7 +114,7 @@ function wrapper(plugin_info) {
 
     window.plugin.playerTracker6h.zoomListener = function() {
         var ctrl = $('.leaflet-control-layers-selector + span:contains("Player Tracker")').parent();
-        if(window.map.getZoom() < window.PLAYER_TRACKER_MIN_ZOOM) {
+        if(window.map.getZoom() < window.PLAYER_TRACKER_6H_MIN_ZOOM) {
             if (!window.isTouchDevice()) plugin.playerTracker6h.closeIconTooltips();
             plugin.playerTracker6h.drawnTracesEnl.clearLayers();
             plugin.playerTracker6h.drawnTracesRes.clearLayers();
@@ -129,7 +129,7 @@ function wrapper(plugin_info) {
     };
 
     window.plugin.playerTracker6h.getLimit = function() {
-        return new Date().getTime() - window.PLAYER_TRACKER_MAX_TIME;
+        return new Date().getTime() - window.PLAYER_TRACKER_6H_MAX_TIME;
     };
 
     window.plugin.playerTracker6h.discardOldData = function() {
@@ -292,7 +292,7 @@ function wrapper(plugin_info) {
         var polyLineByAgeEnl = [[], [], [], []];
         var polyLineByAgeRes = [[], [], [], []];
 
-        var split = PLAYER_TRACKER_MAX_TIME / 4;
+        var split = PLAYER_TRACKER_6H_MAX_TIME / 4;
         var now = new Date().getTime();
         $.each(plugin.playerTracker6h.stored, function(plrname, playerData) {
             if(!playerData || playerData.events.length === 0) {
