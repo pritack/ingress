@@ -438,7 +438,7 @@ function wrapper(plugin_info) {
                 color: PLAYER_TRACKER_6H_LINE_COLOUR_ENL,
                 clickable: false,
                 opacity: 1-0.2*i,
-                //dashArray: "5,8"
+                dashArray: "3,5"
             };
 
             $.each(polyLine,function(ind,poly) {
@@ -453,7 +453,7 @@ function wrapper(plugin_info) {
                 color: PLAYER_TRACKER_6H_LINE_COLOUR_RES,
                 clickable: false,
                 opacity: 1-0.2*i,
-                //dashArray: "5,8"
+                dashArray: "3,5"
             };
 
             $.each(polyLine, function(ind,poly) {
