@@ -33,11 +33,11 @@ function wrapper(plugin_info) {
 
 
     // PLUGIN START ////////////////////////////////////////////////////////
-    window.PLAYER_TRACKER_MAX_TIME = 6*60*60*1000; // in milliseconds (6hour)
-    window.PLAYER_TRACKER_MIN_ZOOM = 9;
-    window.PLAYER_TRACKER_MIN_OPACITY = 0.3;
-    window.PLAYER_TRACKER_LINE_COLOUR_ENL = '#FF00FD';
-    window.PLAYER_TRACKER_LINE_COLOUR_RES = '#FF7C0F';
+    window.PLAYER_TRACKER_6H_MAX_TIME = 6*60*60*1000; // in milliseconds (6hour)
+    window.PLAYER_TRACKER_6H_MIN_ZOOM = 9;
+    window.PLAYER_TRACKER_6H_MIN_OPACITY = 0.3;
+    window.PLAYER_TRACKER_6H_LINE_COLOUR_ENL = '#FF00FD';
+    window.PLAYER_TRACKER_6H_LINE_COLOUR_RES = '#FF7C0F';
 
 
     // use own namespace for plugin
@@ -401,8 +401,8 @@ function wrapper(plugin_info) {
             });
 
             // marker opacity
-            var relOpacity = 1 - (now - last.time) / window.PLAYER_TRACKER_MAX_TIME;
-            var absOpacity = window.PLAYER_TRACKER_MIN_OPACITY + (1 - window.PLAYER_TRACKER_MIN_OPACITY) * relOpacity;
+            var relOpacity = 1 - (now - last.time) / window.PLAYER_TRACKER_6H_MAX_TIME;
+            var absOpacity = window.PLAYER_TRACKER_6H_MIN_OPACITY + (1 - window.PLAYER_TRACKER_6H_MIN_OPACITY) * relOpacity;
 
             // marker itself
             var icon = playerData.team === 'RESISTANCE' ?  new plugin.playerTracker6h.iconRes() :  new plugin.playerTracker6h.iconEnl();
@@ -487,7 +487,7 @@ function wrapper(plugin_info) {
     };
 
     window.plugin.playerTracker6h.handleData = function(data) {
-        if(window.map.getZoom() < window.PLAYER_TRACKER_MIN_ZOOM) return;
+        if(window.map.getZoom() < window.PLAYER_TRACKER_6H_MIN_ZOOM) return;
 
         plugin.playerTracker6h.discardOldData();
         plugin.playerTracker6h.processNewData(data);
