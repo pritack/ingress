@@ -5,6 +5,8 @@
 通常は解析するログが3時間前までですが、6時間まで伸ばしたPlayer Trackerプラグインです。
 ただし、プレイヤー数が多くintel自体のログが残っていない場合はログが残っている範囲での表示になるので、必ずしも6時間分の内容が表示されるわけではありません。
 
+[Ymap](https://github.com/pritack/ingress/raw/feature/YahooMap/basemap-yahoo.user.js)
+
 ## 動作確認
 * Desktop版
 * iOS版
