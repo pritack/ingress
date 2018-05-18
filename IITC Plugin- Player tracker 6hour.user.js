@@ -40,7 +40,7 @@ function wrapper(plugin_info) {
     window.PLAYER_TRACKER_6H_LINE_COLOUR_RES = '#FF7C0F';
 
 
-    // use own namespace for plugin
+    // use own namespace for plugin.
     window.plugin.playerTracker6h = function() {};
 
     window.plugin.playerTracker6h.setup = function() {
