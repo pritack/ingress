@@ -57,10 +57,39 @@ function wrapper(plugin_info) {
     plugin_info.pluginId = 'yahoo-japan-map';
 
     var setup = function () {
+		//API Key
         var yahooApiKey = 'dj0zaiZpPVVNaHJ0MElNSVJ3dSZzPWNvbnN1bWVyc2VjcmV0Jng9YmQ-';
-        var yahooRainOpt = { attribution: 'Yahoo Rain Map', maxNativeZoom: 18, maxZoom: 21 };
-        var yahooRain = new L.YahooLayer('https://map.yahooapis.jp/map/V1/static?appid=' + yahooApiKey + '&lat={x}&lon={y}&z={z}&width=256&height=256&scalebar=off&overlay=type:rainfall|datelabel:off', yahooRainOpt);
-        layerChooser.addBaseLayer(yahooRain, 'Yahoo Rainfall Map');
+		
+		//Base URL
+		var yahooBaseURL = 'https://map.yahooapis.jp/map/V1/static?appid=';
+		
+		//lat,lon,size URL
+		var fixedParamURL = '&lat={x}&lon={y}&z={z}&width=256&height=256';
+
+		//Yahoo Rainfall Map
+        var yahooRainOpt = { attribution: 'Yahoo Rainfall Map', maxNativeZoom: 18, maxZoom: 21 };
+        var yahooRainfall = new L.YahooLayer(yahooBaseURL + yahooApiKey +  fixedParamURL + '&scalebar=off&overlay=type:rainfall|datelabel:off', yahooRainOpt);
+        layerChooser.addBaseLayer(yahooRainfall, 'Yahoo Rainfall Map');
+
+		//Yahoo Map
+        var yahooOpt = { attribution: 'Yahoo Map', maxNativeZoom: 18, maxZoom: 21 };
+        var yahoo = new L.YahooLayer(yahooBaseURL + yahooApiKey +  fixedParamURL + '&scalebar=off', yahooOpt);
+        layerChooser.addBaseLayer(yahoo, 'Yahoo Map');
+
+		//Yahoo Photo Map
+        var yahooPhotoOpt = { attribution: 'Yahoo Photo Map', maxNativeZoom: 18, maxZoom: 21 };
+        var yahooPhoto = new L.YahooLayer(yahooBaseURL + yahooApiKey +  fixedParamURL + '&mode=photo&scalebar=off', yahooPhotoOpt);
+        layerChooser.addBaseLayer(yahooPhoto, 'Yahoo Photo Map');
+		
+		//Yahoo Hybrid Map
+        var yahooHybridOpt = { attribution: 'Yahoo Hybrid Map', maxNativeZoom: 18, maxZoom: 21 };
+        var yahooHybrid = new L.YahooLayer(yahooBaseURL + yahooApiKey +  fixedParamURL + '&mode=hybrid&scalebar=off', yahooHybridOpt);
+        layerChooser.addBaseLayer(yahooHybrid, 'Yahoo Hybrid Map');
+		
+		//Yahoo HD Map
+        var yahooHDOpt = { attribution: 'Yahoo HD Map', maxNativeZoom: 18, maxZoom: 21 };
+        var yahooHD = new L.YahooLayer(yahooBaseURL + yahooApiKey +  fixedParamURL + '&mode=hd&scalebar=off', yahooHDOpt);
+        layerChooser.addBaseLayer(yahooHD, 'Yahoo HD Map');
     };
 
     setup.info = plugin_info; //add the script info data to the function as a property
