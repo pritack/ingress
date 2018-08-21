@@ -31,3 +31,5 @@ Yahoo Japanの地図APIを使用して以下の地図が利用できるように
 
 ハイビジョンの画像？を使用した地図です。
 表示がはっきりきれいです。
+
+[telegram bot](https://raw.githubusercontent.com/pritack/ingress/master/hellobot.php)
