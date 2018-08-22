@@ -140,7 +140,7 @@ function processMessage($message) {
 }
 
 
-define('WEBHOOK_URL', 'https://raw.githubusercontent.com/pritack/ingress/master/hellobot.php');
+define('WEBHOOK_URL', 'pritack.github.io/ingress/hellobot.php');
 
 if (php_sapi_name() == 'cli') {
   // if run from console, set or delete webhook
