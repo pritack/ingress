@@ -51,7 +51,7 @@ function exec_curl_request($handle) {
   } else {
     $response = json_decode($response, true);
     if (isset($response['description'])) {
-      error_log("Request was successfull: {$response['description']}\n");
+      error_log("Request was successful: {$response['description']}\n");
     }
     $response = $response['result'];
   }
@@ -107,6 +107,7 @@ function apiRequestJson($method, $parameters) {
   curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, 5);
   curl_setopt($handle, CURLOPT_TIMEOUT, 60);
+  curl_setopt($handle, CURLOPT_POST, true);
   curl_setopt($handle, CURLOPT_POSTFIELDS, json_encode($parameters));
   curl_setopt($handle, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
 
