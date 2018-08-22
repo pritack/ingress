@@ -140,7 +140,7 @@ function processMessage($message) {
 }
 
 
-define('WEBHOOK_URL', 'https://telegram-creators.bacronym.net/demo/hellobot.php');
+define('WEBHOOK_URL', 'https://pritack.github.io/ingress/hellobot.php');
 
 if (php_sapi_name() == 'cli') {
   // if run from console, set or delete webhook
